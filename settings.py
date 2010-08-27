@@ -94,7 +94,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
     'cms.middleware.multilingual.MultilingualURLMiddleware',
-
 )
 
 ROOT_URLCONF = 'creative-cubes.urls'
