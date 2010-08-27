@@ -9,7 +9,8 @@ TEMPLATE_DEBUG = DEBUG
 PROJECT_ROOT = abspath(dirname(__file__)) 
 
 ADMINS = (
-    ('Manuel Schmidt', 'manuel@schmidtman.de'),
+    ('Manuel Schmidt', 'ms@creative-cubes.de'),
+    ('Christian Schweinhardt', 'cs@creative-cubes.de'),
 )
 
 MANAGERS = ADMINS
@@ -126,11 +127,14 @@ INSTALLED_APPS = (
 
 CMS_LANGUAGES = (
     ('de', 'Deutsch'),
+    ('en', 'Englisch'),
 )
 
 CMS_TEMPLATES = (
-    ('default.html', 'default'),
+    ('default.html', 'Default'),
+    ('p_startpage.html', 'Startseite'),
 )
+
 CMS_MODERATOR = False
 CMS_SEO_FIELDS = True
 

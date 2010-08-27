@@ -1,0 +1,80 @@
+/************************************************************************************
+ Big Box
+************************************************************************************/
+
+.bigbox { width: 910px; height: 54px; padding: 249px 0px 0px 0px; 
+    background: url('/site_media/startseite/gfx/bigbox_bg1.png') no-repeat; }
+
+.bigbox .box1 { width: 283px; height: 36px; float: left; cursor: pointer;
+    margin: 0px 1px 0px 0px; padding: 17px 0px 0px 20px; font-size: 20px; }
+.bigbox .box2 { width: 281px; height: 36px; float: left; cursor: pointer; 
+    margin: 0px 1px 0px 0px; padding: 17px 0px 0px 20px; font-size: 20px; }
+.bigbox .box3 { width: 283px; height: 36px; float: left; cursor: pointer;
+    padding: 17px 0px 0px 20px; font-size: 20px; }
+.bigbox .box1, .box2, .box3 { color: #7E7E7E; }
+.bigbox .box1:hover, .box2:hover, .box3:hover { color: #282828; }
+
+.tip1, .tip2, .tip3 { color: #7E7E7E; position: absolute; height: 140px;
+    background: url('/site_media/startseite/gfx/tip_bg2.png') no-repeat;
+    width: 230px; top: 190px; display: none; padding: 15px 20px 15px 20px; }
+.tip1 { margin: 0px 0px 0px 23px; }
+.tip2 { margin: 0px 0px 0px 325px; }
+.tip3 { margin: 0px 0px 0px 627px; }
+
+
+/************************************************************************************
+ Big Box
+************************************************************************************/
+
+
+
+/************************************************************************************
+ Small Box
+************************************************************************************/
+
+.smallbox { width: 910px; margin: 32px 0px 0px 0px; }
+.smallbox .news, .project, .blog { float: left; }
+.smallbox .news, .project { margin-right: 60px; }
+.smallbox .head { width: 238px; height: 45px; 
+    background: url('/site_media/startseite/gfx/smallbox_head_bg.png') no-repeat;
+    padding: 23px 0px 0px 25px; color: #FFFFFF; font-size: 20px; }
+.smallbox .head img { margin: 0px 15px -7px 0px; border: 0px; }
+.smallbox .head a { color: #FFFFFF; text-decoration: none; }
+.smallbox .head a:hover { color: #0060D4; }
+
+.smallbox .news .body { font-size: 12px; color: #282828; width: 263px; }
+.smallbox .news .body ul { padding: 0px; margin: 0px; list-style: none; }
+.smallbox .news .body ul li { border-bottom: 1px dotted #7E7E7E; 
+    padding: 0px 5px 0px 5px; margin: 9px 0px 0px 0px; }
+    
+    
+.smallbox .news .body ul li div.date { background: url('/site_media/gfx/date_bg.png'); 
+    float: left; height: 50px; width: 50px; margin-right: 8px; }
+.smallbox .news .body ul li div.date span.day { color: #FFFFFF; display: block;
+    width: 50px; height: 18px; text-align: center; padding: 7px 0px 0px 0px; }
+.smallbox .news .body ul li div.date span.month { color: #FFFFFF; display: block;
+    width: 50px; height: 20px; text-align: center; padding: 5px 0px 0px 0px; }
+.smallbox .news .body ul li a { color: #282828; font-weight: bold; text-decoration: none; }
+.smallbox .news .body ul li a:hover { color: #0060D4; }    
+.smallbox .news .body ul li p { padding: 0px; margin: 0px 0px 6px 0px; 
+    text-align: justify;  }
+    
+.smallbox .blog .body { font-size: 12px; color: #282828; width: 263px; }
+.smallbox .blog .body ul { padding: 0px; margin: 0px; list-style: none; }
+.smallbox .blog .body ul li { border-bottom: 1px dotted #7E7E7E; 
+    padding: 0px 5px 0px 5px; margin: 9px 0px 0px 0px; }
+.smallbox .blog .body ul li div.date { background: url('/site_media/gfx/date_bg.png'); 
+    float: left; height: 50px; width: 50px; margin-right: 8px; }
+.smallbox .blog .body ul li div.date span.day { color: #FFFFFF; display: block;
+    width: 50px; height: 18px; text-align: center; padding: 7px 0px 0px 0px; }
+.smallbox .blog .body ul li div.date span.month { color: #FFFFFF; display: block;
+    width: 50px; height: 20px; text-align: center; padding: 5px 0px 0px 0px; }
+.smallbox .blog .body ul li a { color: #282828; font-weight: bold; text-decoration: none; }
+.smallbox .blog .body ul li a:hover { color: #0060D4; }    
+.smallbox .blog .body ul li p { padding: 0px; margin: 0px 0px 6px 0px; 
+    text-align: justify;  }
+.smallbox .blog .body ul li.noentry { border-bottom: 0px }
+
+/************************************************************************************
+ Small Box
+************************************************************************************/

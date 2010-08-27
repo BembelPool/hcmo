@@ -1,0 +1,140 @@
+{% extends "base.html" %}
+
+{% load cms_tags %}
+
+    {% block stylesheet %}<link rel="stylesheet" type="text/css" href="/site_media/startseite/css/style.css" />{% endblock %}
+
+{% block content %}
+    <script type="text/javascript">
+        $(document).ready(function(){  
+            $(".box1").hover(function() {  
+                $(".tip1").animate({
+                    marginTop: "-20px",
+                    opacity: "1.0"
+                }, 200).show();
+            }, function(){
+                $(".tip1").stop().animate({
+                    marginTop: "0px",
+                    opacity: "0.0"
+                }, "slow").show();
+            });
+            $(".box2").hover(function() {  
+                $(".tip2").animate({
+                    marginTop: "-20px",
+                    opacity: "1.0"
+                }, 200).show();
+            }, function(){
+                $(".tip2").stop().animate({
+                    marginTop: "0px",
+                    opacity: "0.0"
+                }, "slow").show();
+            });
+            $(".box3").hover(function() {  
+                $(".tip3").animate({
+                    marginTop: "-20px",
+                    opacity: "1.0"
+                }, 200).show();
+            }, function(){
+                $(".tip3").stop().animate({
+                    marginTop: "0px",
+                    opacity: "0.0"
+                }, "slow").show();
+            });
+        });
+    </script>
+    
+    <div class="bigbox">
+        <div class="tip1">First Design</div>
+        <div class="tip2">Second Development</div>
+        <div class="tip3">Third Completition</div>
+        <div class="box1"><span>Design</span></div>
+        <div class="box2"><span>Development</span></div>
+        <div class="box3"><span>Completition</span></div>
+    </div>
+    
+    <div class="smallbox">
+        
+        <div class="news">
+            <div class="head">   
+            {% ifequal request.LANGUAGE_CODE "de" %}
+                <a href="/aktuell/"><img src="/site_media/startseite/gfx/news_icon.png" alt="News Icon" /> Aktuell</a>
+            {% else %}
+                <a href="/news/"><img src="/site_media/startseite/gfx/news_icon.png" alt="News Icon" /> News</a>
+            {% endifequal %}
+            </div>
+            <div class="body">
+                <ul>
+                    <li>
+                        <div class="date">
+                            <span class="day">13</span>
+                            <span class="month">Dez</span>
+                        </div>
+                        <a href="#">Newsheadline 1</a>
+                        <p>Hier steht der Shorttext der News zu dem Datum. Evtl. anstatt des Shorttext ...</p>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <span class="day">11</span>
+                            <span class="month">Nov</span>
+                        </div>
+                        <a href="#">Newsheadline 2</a>
+                        <p>Hier steht der Shorttext der News zu dem Datum. Evtl. anstatt des Shorttext ...</p>
+                    </li>
+                    <li>
+                        <div class="date">
+                            <span class="day">01</span>
+                            <span class="month">Aug</span>
+                        </div>
+                        <a href="#">Newsheadline 3</a>
+                        <p>Hier steht der Shorttext der News zu dem Datum. Evtl. anstatt des Shorttext ...</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="project">
+            <div class="head">
+            {% ifequal request.LANGUAGE_CODE "de" %}
+                <a href="/projekte/"><img src="/site_media/startseite/gfx/project_icon.png" alt="Project Icon" /> Projekte</a>
+            {% else %}
+                <a href="/projects/"><img src="/site_media/startseite/gfx/project_icon.png" alt="Project Icon" /> Projects</a>
+            {% endifequal %}
+            </div>
+        </div>
+        
+        <div class="blog">
+            <div class="head">
+                <a href="/blog/"><img src="/site_media/startseite/gfx/blog_icon.png" alt="Blog Icon" /> Blog</a>
+            </div>
+            <div class="body">
+              {% if latest_entries %}
+                <ul>
+                {% for entry in latest_entries %}
+                    <li>
+                        <div class="date">
+                            <span class="day">{{ entry.pub_date|date:"d" }}</span>
+                            <span class="month">{{ entry.pub_date|date:"b" }}</span>
+                        </div>
+                        <a href="{{ entry.get_absolute_url }}">{{ entry.title }}</a>
+                        <p>{{ entry.body|safe }}</p>
+                    </li>
+                {% endfor %}
+                </ul>
+            {% else %}
+                <ul>
+                    <li class="noentry">
+                        {% ifequal request.LANGUAGE_CODE "de" %}
+                            <p>Derzeit sind keine Blogeinträge vorhanden</p>
+                        {% else %}
+                            <p>Currently there are no blog entries</p>
+                        {% endifequal %}
+                    </li>
+                </ul>
+            {% endif %}
+            </div>
+        </div>
+        <div class="clear"></div>
+        
+    </div>
+    
+{% endblock %}
