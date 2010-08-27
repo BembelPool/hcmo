@@ -1,0 +1,22 @@
+{% load cms_tags cache %}
+                    <script type="text/javascript">
+                    $(document).ready(function(){  
+                        $("#head #head_menu li a.link").hover(function() {  
+                            $(this).animate({
+                                backgroundPosition: "0px 2px"
+                            }, 200);
+                        }, function(){
+                            $(this).animate({
+                                backgroundPosition: "-2px 2px"
+                            }, 200);
+                        });
+                    });
+                    </script>
+
+                    <ul id="head_menu">
+                    {% for child in children %}
+                        <li>
+                            <a href="{{ child.get_absolute_url }}" class="{% if child.selected or child.ancestor %}active{% else %}link{% endif %}">{{ child.get_title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>

@@ -1,0 +1,10 @@
+{% load cms_tags cache %}
+                    <ul id="footer_menu">
+                        <li><a href="http://www.twitter.com/creative_cubes"><img src="http://twitter-badges.s3.amazonaws.com/t_mini-a.png" alt="Follow creative_cubes on Twitter" /> Twitter</a>
+                        </li>
+                    {% for child in children %}
+                        <li>
+                            <a href="{{ child.get_absolute_url }}" class="{% if child.selected or child.ancestor %}active{% else %}link{% endif %}">{{ child.get_title }}</a>
+                        </li>
+                    {% endfor %}
+                    </ul>
