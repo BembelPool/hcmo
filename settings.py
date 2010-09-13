@@ -132,6 +132,7 @@ CMS_LANGUAGES = (
 CMS_TEMPLATES = (
     ('default.html', 'Default'),
     ('p_startpage.html', 'Startseite'),
+    ('p_leftgrey.html', 'Links graue Spalte'),
 )
 
 CMS_MODERATOR = False
