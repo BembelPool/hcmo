@@ -16,48 +16,7 @@
 </head>
 
 <body>
-<div id="wrapper">
-    <div id="head">
-        <div id="head_inner">
-            <div id="head_left">
-                <div id="head_location"> 
-                    {% language_chooser %}
-                </div>
-                <div id="head_navigation">
-                    {% show_menu 1 100 100 100 "menu.html" %}
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div id="head_logo">
-                <a href="/"><img src="{{ MEDIA_URL }}gfx/head_inner_logo.png" alt="Creative Cubes Logo" /></a>
-            </div>
-        </div>
-    </div>
     
-    <div id="content">
-        <div id="content_top"></div>
-        <div id="content_middle">
-            <div id="content_inner">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
-        <div id="content_bottom"></div>
-    </div>
     
-    <div id="footer">
-        <div id="footer_inner">
-            <div id="copyright">
-                Copyright &copy; 2009 | Creative Cubes
-                <div id="w3c_validation">
-                    <a href="http://validator.w3.org/check?uri=referer"><img src="/site_media/gfx/icon_xhtml.png" alt="Valid XHTML 1.1" height="15" width="80" /></a><a href="http://jigsaw.w3.org/css-validator/check/referer"><img src="/site_media/gfx/icon_css.png" alt="CSS ist valide!" height="15" width="80" /></a>
-                </div>
-            </div>
-            <div id="footer_navigation">
-                {% show_menu_below_id "footer" 1 100 100 100 "footer_menu.html" %}
-                <div class="clear"></div>
-            </div>
-        </div>
-    </div>    
-</div>
 </body>
 </html>

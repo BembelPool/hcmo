@@ -10,7 +10,7 @@ sys.path.insert(0, abspath(join(dirname(__file__), "../")))
 sys.path.insert(0, abspath(join(dirname(__file__), "../../")))
 
 from django.conf import settings
-os.environ["DJANGO_SETTINGS_MODULE"] = "creative-cubes.settings"
+os.environ["DJANGO_SETTINGS_MODULE"] = "hcmo.settings"
 
 #sys.path.insert(0, join(settings.DIRNAME, "apps"))
 

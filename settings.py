@@ -96,7 +96,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.multilingual.MultilingualURLMiddleware',
 )
 
-ROOT_URLCONF = 'creative-cubes.urls'
+ROOT_URLCONF = 'hcmo.urls'
 
 TEMPLATE_DIRS = (
     join(PROJECT_ROOT, 'templates/'),
@@ -131,8 +131,6 @@ CMS_LANGUAGES = (
 
 CMS_TEMPLATES = (
     ('default.html', 'Default'),
-    ('p_startpage.html', 'Startseite'),
-    ('p_leftgrey.html', 'Links graue Spalte'),
 )
 
 CMS_MODERATOR = False
