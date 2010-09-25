@@ -1,4 +1,6 @@
 {% load cms_tags menu_tags %}
 {% for child in children %}
-    <li{% if child.selected %} class="selected"{% endif %}><a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a></li>
+    <li{% if child.selected %} class="selected"{% endif %}>
+        <a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
+    </li>
 {% endfor %}

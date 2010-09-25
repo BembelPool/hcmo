@@ -95,7 +95,7 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.media.PlaceholderMediaMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    'cms.middleware.multilingual.MultilingualURLMiddleware',
+    #'cms.middleware.multilingual.MultilingualURLMiddleware',
 )
 
 ROOT_URLCONF = 'hcmo.urls'
@@ -114,6 +114,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
 
     # base django-cms
+
     'cms',
     'menus',
     'publisher',
