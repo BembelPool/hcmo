@@ -1,12 +1,15 @@
 html, body {height:100%;}
 body {margin:0;padding:0;background:url('../gfx/bg.png') repeat-x #C9C9C9;font-family:Arial;font-size:12px;color:#000000;}
 
-.left {float:left;}
-.right {float:right;}
-.clear {clear:both;}
+a img { border: 0px none; }
+*, * focus { outline: medium none; }
 
 h1 {font-size:24px;color:#56626B;margin:0 0 4px 14px;padding:0;font-weight:normal;}
 h1.darkblue {font-size:24px;color:#003B62;margin:0;padding:0;font-weight:normal;}
+
+.left {float:left;}
+.right {float:right;}
+.clear {clear:both;}
 
 #wrapper {min-height:100%;}
 
@@ -27,7 +30,6 @@ ul#menu li.selected {background:url('../gfx/navigation-li-bg.png') right no-repe
 #head-image {margin-top:15px;}
 
 #content {width:989px;background:url('../gfx/content-bg.png') right repeat-y; margin:24px 0 0 0;}
-#content a {color:#56626B;text-decoration:none;}
 
 #footer {height:48px;width:989px;padding:25px 0 55px 0;background:url('../gfx/footer-bg.png') no-repeat top right;}
 .footer-shadow {box-shadow: 0px 18px 11px #000000; -moz-box-shadow: 0px 18px 11px #000000; -webkit-box-shadow: 0px 18px 11px #000000;}
