@@ -58,3 +58,9 @@ class Photo(models.Model):
 
     def __unicode__(self):
         return self.title
+    
+    def _image_repr(self):
+        return '<img src="/site_media/%s" width="130" height="100" />' % self.image
+    _image_repr.short_description = "Image"
+    _image_repr.allow_tags = True
+

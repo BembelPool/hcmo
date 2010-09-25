@@ -14,7 +14,7 @@ admin.site.register(Gallery, GalleryAdmin)
 
 class PhotoAdmin(admin.ModelAdmin):
     date_hierarchy = 'created'
-    list_display = ('title', 'slug', 'created')
+    list_display = ('_image_repr','title', 'slug', 'created')
     prepopulated_fields = {'slug' : ('title',) }
 
 
