@@ -16,7 +16,7 @@ body {margin:0;padding:0;background:url('../gfx/bg.png') repeat-x #C9C9C9;font-f
 #head-navigation {height:47px;width:728px;background:url('../gfx/head-navigation-bg.png') repeat-x;}
 #head-image {margin-top:15px;}
 
-#content {width:989px;background:url('../gfx/content-bg.png') right bottom repeat-y; height:400px;}
+#content {width:989px;background:url('../gfx/content-bg.png') right repeat-y; height:400px;margin:24px 0 0 0;}
 #left {}
 #right {}
 
