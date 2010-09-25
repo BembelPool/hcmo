@@ -128,7 +128,8 @@ INSTALLED_APPS = (
     
     # Other
     'lib',
-    'sorl.thumbnail'
+    'sorl.thumbnail',
+    'imggal',
 )
 
 #-----------------------------------------------------
