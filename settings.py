@@ -122,14 +122,13 @@ INSTALLED_APPS = (
     'cms.plugins.text',
     
     # zinnia and deps
-    'tagging',
-    'zinnia',
-    #'zinnia.plugins',
+    #'tagging',
     
     # Other
     'lib',
     'sorl.thumbnail',
     'imggal',
+    'news',
 )
 
 #-----------------------------------------------------

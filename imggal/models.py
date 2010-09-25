@@ -47,7 +47,7 @@ class PhotoManager(models.Manager):
 
 class Photo(models.Model):
     gallery = models.ForeignKey(Gallery)
-    image = models.ImageField(upload_to='imggal/' )
+    image = models.ImageField(upload_to='imggal/')
     title = models.CharField(max_length=75)
     slug = models.SlugField(max_length=75, unique=True)
     description = models.TextField(blank=True)

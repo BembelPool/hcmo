@@ -1,7 +1,0 @@
-{% for crumb in breadcrumbs %}
-{% if not forloop.last %}
-<a href="{{ crumb.url }}" >{{ crumb.name }}</a> {{ separator }}
-{% else %}
-  {{ crumb.name }}
-{% endif %}
-{% endfor %}
