@@ -1,0 +1,26 @@
+#left {width:296px;}
+#right {width:667px;padding:13px;}
+
+h2.description {font-size:14px;margin:0;padding:0;font-weight:normal;color:#0058A1;}
+
+.sponsor {width:290px;height:73px;background:#FFFFFF;margin:0 0 4px 5px;}
+
+.article {width:634px;padding:17px 19px 23px 14px;background:#FFFFFF;margin:0 0 1px 0;}
+.article-date {color:#56626B;}
+.article-image {width:167px;margin-top:7px;}
+.article-image img {border:1px solid #000000;}
+.article-content {width:454px;margin:7px 0 0 12px;}
+.article-links {width:454px;margin:7px 0 0 0;}
+.article-readmore {width:133px;}
+.article-email {width:321px;}
+
+.more-news {width:634px;padding:13px 19px 12px 14px;background:#FFFFFF;text-align:right;margin-bottom:13px;}
+
+.new-images {width:298px;height:241;background:#FFFFFF;margin:0 15px 0 0;padding:17px 14px 4px 14px;}
+.new-images-list {margin-top: 16px;}
+.new-image {width:144px;height:97px;margin:0 0 8px 0;}
+
+.new-movies {width:298px;height:244px;background:#FFFFFF;padding:17px 14px 14px 14px;}
+.new-movies-box {margin:16px 0 0 0;color:#56626B;}
+
+.new-image img, .new-movies-pre img {border:1px solid #000000;}

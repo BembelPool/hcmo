@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 {% load cms_tags %}
 
-{% block base_content %}
-<style type="text/css">
-    .sponsor {width:290px; height:73px; background-color:#ccc;}
-</style>
+{% block stylesheet %}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/home.css" />
+{% endblock stylesheet %}
+
+{% block javascript %}
 <script type="text/javascript">
 /*
     $(document).ready(function(){
@@ -32,16 +33,89 @@
     });
 */
 </script>
+{% endblock javascript %}
 
-    
-    <div id="ponsosoren_container" style="width:300px; float:left; border:1px solid #000;">
+{% block base_content %}
+    <div id="left" class="left">
         <h1>Sponsoren</h1>
         {% placeholder home_sponsoren %}
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <h1>Facebook</h1>
     </div>
-    
-    <div id="content_container" style="width:400px; float:right; border:1px solid #000;">
-        <h1>Content</h1>
+    <div id="right" class="left">
+        <div class="article">
+            <div class="right">
+                <a href="#"><img src="{{ MEDIA_URL }}base/gfx/i-like.png" /></a>
+            </div>
+            <h1 class="darkblue">HEICO Motorsport startet im Web voll durch!</h1>
+            <div class="article-date">Freitag, den 07.10.2010</div>
+            <div class="article-image left">
+                <img src="#" width="165" height="85" />
+            </div>
+            <div class="article-content left">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <div class="article-links">
+                    <div class="article-readmore left"><a href="">+ Weiterlesen ...</a></div>
+                    <div class="article-email left"><a href="">+ Per E-Mail versenden</a></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="article">
+            <div class="right">
+                <a href="#"><img src="{{ MEDIA_URL }}base/gfx/i-like.png" /></a>
+            </div>
+            <h1 class="darkblue">SLS GT3 punktet auf ganzer Linie.</h1>
+            <div class="article-date">Dienstag, den 07.10.2010</div>
+            <div class="article-image left">
+                <img src="#" width="165" height="85" />
+            </div>
+            <div class="article-content left">
+                Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+                <div class="article-links">
+                    <div class="article-readmore left"><a href="">+ Weiterlesen ...</a></div>
+                    <div class="article-email left"><a href="">+ Per E-Mail versenden</a></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="more-news">
+            <a href="#">+ Weitere News</a>
+        </div>
+        <div class="new-images left">
+            <h1 class="darkblue">Neue Fotos</h1>
+            <div class="new-images-list">
+                <div class="new-image left">
+                    <img src="" width="142" height="95" />
+                </div>
+                <div class="new-image left" style="margin-left:10px;">
+                    <img src="" width="142" height="95" />
+                </div>
+                <div class="new-image left">
+                    <img src="" width="142" height="95" />
+                </div>
+                <div class="new-image left" style="margin-left:10px;">
+                    <img src="" width="142" height="95" />
+                </div>
+            </div>
+        </div>
+        <div class="new-movies left">
+            <h1 class="darkblue">Neue Videos</h1>
+            <div class="new-movies-box">
+                <div class="new-movies-pre">
+                    <img src="#" width="297" height="170" />
+                </div>
+                <div class="new-movies-desc">
+                <h2 class="description">Erster Boxenstop Nürburgring 2010</h2>
+                Länge 00:22
+                </div>
+            </div>
+        </div>
         {% placeholder home_content %}
     </div>
-    
-{% endblock %}
+    <div class="clear"></div>        
+{% endblock base_content %}
