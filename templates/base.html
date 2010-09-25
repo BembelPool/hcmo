@@ -1,28 +1,54 @@
 <?xml version="1.1" encoding="UTF-8"?>
-{% load cms_tags menu_tags %}
+{% load cms_tags %}
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>{% page_attribute page_title %} | Heico-Motorsport GmbH</title>
+		
+		<meta name="author" content="Creative Cubes - mobile web solutions">
+		<meta name="description" content="{% page_attribute meta_description %}">
+        <meta name="keywords" content="{% page_attribute meta_keywords %}">
+		
+		<link type="image/png" rel="shortcut icon"  href="{{ MEDIA_URL }}base/gfx/favicon.png" />
+		
+		<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/base.css" />
+		{% block stylesheet %}{% endblock stylesheet %}
+		
+		<script type="text/javascript" src="{{ MEDIA_URL }}"></script>
+		{% block javascript %}{% endblock javascript %}
+	</head>
+	<body>
+        <div id="wrapper">
+            <div id="container">
+                <div id="head">
+                    <div id="head-logo" class="left">
+                        <a href="/"><img src="{{ MEDIA_URL }}base/gfx/head-logo.png" /></a>
+                    </div>
+                    <div id="head-navigation" class="left">
 
-<head>
-    <title>{% page_attribute page_title %} | Creative Cubes - einfach kreativ</title>
-    <meta name="author" content="Creative Cubes" />
-    <meta name="copyright" content="Creative Cubes" />
-    <meta name="description" content="{% page_attribute meta_description %}" />
-    <meta name="keywords" content="{% page_attribute meta_keywords %}" />
-    <link rel="shortcut icon" href="{{ MEDIA_URL }}gfx/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" type="text/css" href="/site_media/css/base.css" />
-    {% block stylesheet %}{% endblock %}
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-</head>
-<script type="text/javascript">
-    
-</script>
-<body>
-    
-    <div id="" style="width:920px; height:500px; margin:auto; border:1px solid red;">
-        {% block base_content %}
-        {% endblock %}
-    </div>
-    
-</body>
+                    </div>
+                    <div class="clear"></div>
+                    <div id="head-image">
+                        <img src="{{ MEDIA_URL }}base/gfx/banner.jpg" />
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <div id="content">
+                    <div id="left" class="left">
+                        Left
+                    </div>
+                    <div id="right" class="left">
+                        Right
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div id="footer">
+                    <div id="footer-content">
+                        Copyright 2010 Heico-Motorsport GmbH - <a href="#">Sitemap</a> - <a href="#">Presse</a> - <a href="#">Kontakt</a> - <a href="#">Impressum</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+	</body>
 </html>

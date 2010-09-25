@@ -142,6 +142,7 @@ CMS_LANGUAGES = (
 CMS_TEMPLATES = (
     ('cms/pages/default.html', 'Default'),
     ('cms/pages/home.html', 'Home'),
+    ('cms/default.html', 'Default'),
 )
 
 CMS_MODERATOR = False
