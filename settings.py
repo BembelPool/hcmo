@@ -80,7 +80,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.media",
     "django.contrib.messages.context_processors.messages",
-
+    'zinnia.context_processors.media',
+    #'zinnia.context_processors.version',
+    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -105,6 +107,7 @@ TEMPLATE_DIRS = (
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
+    'django.contrib.comments',
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
@@ -117,7 +120,15 @@ INSTALLED_APPS = (
     'mptt',
     # django-cms plugins
     'cms.plugins.text',
- 
+    
+    # zinnia and deps
+    'tagging',
+    'zinnia',
+    #'zinnia.plugins',
+    
+    # Other
+    'lib',
+    'sorl.thumbnail'
 )
 
 #-----------------------------------------------------
@@ -126,10 +137,11 @@ INSTALLED_APPS = (
 
 CMS_LANGUAGES = (
     ('de', 'Deutsch'),
-    ('en', 'Englisch'),
 )
 
 CMS_TEMPLATES = (
+    ('cms/pages/default.html', 'Default'),
+    ('cms/pages/home.html', 'Home'),
     ('cms/default.html', 'Default'),
 )
 

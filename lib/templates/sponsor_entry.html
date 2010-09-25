@@ -1,0 +1,18 @@
+{% comment %}
+render liefert:
+ sponsor - Instanz des Sponsor Models
+{% endcomment %}
+
+<div class="sponsor">
+    
+<div class="data"
+    sponsor="{{ sponsor }}"
+    img="{{ sponsor.image.url }}"
+    img_hover="{{ sponsor.image_hover.url }}" >
+    --
+</div>
+
+<div id="{{ sponsor }}" class="image_container">
+</div>
+
+</div>
