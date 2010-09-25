@@ -1,0 +1,31 @@
+
+
+<script type="text/javascript">
+    var entries = new Array();
+    {% for entry in entries %}
+        entries.push({{ entry.id }});
+    {% endfor %}
+    
+    $(document).ready(function(){
+        console.log(entries);
+        for(i=0; i<entries.length; i++) {
+            var id = entries[i];
+            console.log(id);
+            $('#entry_'+id).load('/news/single/'+id, function(data){
+                
+                console.log(data);
+            });
+        }
+    });
+</script>
+
+{% for entry in entries %}
+<div id="entry_{{ entry.id }}">
+    <div class="article loader">
+        <img class="loader" src="{{ MEDIA_URL }}gfx/loader.gif" alt="loading" />
+    </div>
+</div>
+{% endfor %}
+
+
+{{ entries }}

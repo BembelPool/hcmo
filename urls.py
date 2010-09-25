@@ -14,6 +14,8 @@ urlpatterns = patterns('',
     
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
+    
+    (r'^news/single/(\d+)', 'news.views.single'),
 
     (r'^', include('cms.urls')),
 )

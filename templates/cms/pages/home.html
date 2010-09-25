@@ -32,6 +32,10 @@
         });
     });
 */
+$(document).ready(function(){
+    
+    
+});
 </script>
 {% endblock javascript %}
 
@@ -58,6 +62,9 @@
         </div>
     </div>
     <div id="right" class="left">
+        {% placeholder home_content_top %}
+        
+        <!--
         <div class="article">
             <div class="right">
                 <a href="#"><img src="{{ MEDIA_URL }}base/gfx/i-like.png" /></a>
@@ -76,6 +83,7 @@
             </div>
             <div class="clear"></div>
         </div>
+        
         <div class="article">
             <div class="right">
                 <a href="#"><img src="{{ MEDIA_URL }}base/gfx/i-like.png" /></a>
@@ -94,9 +102,11 @@
             </div>
             <div class="clear"></div>
         </div>
+        -->
         <div class="more-news">
             <a href="#">+ Weitere News</a>
         </div>
+        
         <div class="new-images left">
             <h1 class="darkblue">Neue Fotos</h1>
             <div class="new-images-list">
@@ -126,7 +136,6 @@
                 </div>
             </div>
         </div>
-        {% placeholder home_content %}
     </div>
     <div class="clear"></div>        
 {% endblock base_content %}
