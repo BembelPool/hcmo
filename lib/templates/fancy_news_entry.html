@@ -1,0 +1,28 @@
+
+
+<script type="text/javascript">
+    var entries = new Array();
+    {% for entry in entries %}
+        entries.push({{ entry.id }});
+    {% endfor %}
+    console.log(entries);
+    
+    $(document).ready(function(){
+        for(i=0; i<entries.length; i++) {
+            alert(i);
+        }
+    });
+</script>
+
+{{ entries }}
+
+
+
+
+
+{% for entry in entries %}
+<div id="entry_{{ entry.id }}">
+    {{ entry.id }}
+</div>
+{% endfor %}
+
