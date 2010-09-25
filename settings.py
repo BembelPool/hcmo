@@ -130,7 +130,7 @@ CMS_LANGUAGES = (
 )
 
 CMS_TEMPLATES = (
-    ('default.html', 'Default'),
+    ('cms/default.html', 'Default'),
 )
 
 CMS_MODERATOR = False
