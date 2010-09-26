@@ -10,7 +10,7 @@ from models import Gallery
 class CMSShowroomGalleryPlugin(CMSPluginBase):
     model = CMSPlugin
     name = 'Showroom Gallery'
-    render_template = 'showroom_gallery.html'
+    render_template = 'gallery_plugin.html'
     
     def render(self, context, instance, placeholder):
         galleries = Gallery.objects.all()

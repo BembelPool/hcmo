@@ -1,0 +1,39 @@
+{% load thumbnail %}
+
+<script type="text/javascript">
+
+function itemLoadCallbackFunction(carousel, state)
+{
+    console.log("itemLoadCallbackFunction");
+    for (var i = carousel.first; i <= carousel.last; i++) {
+        // Check if the item already exists
+        if (!carousel.has(i)) {
+            // Add the item
+            carousel.add(i, "I'm item #" + i);
+        }
+    }
+};
+
+jQuery(document).ready(function() {  
+    $('#image_list_container').jcarousel({
+        itemLoadCallback: itemLoadCallbackFunction
+    });
+    
+    $('.jcarousel-item').click(function() {
+	var src = $(this).attr("src");
+	console.log(src);
+    });
+});
+</script>
+
+<div id="image_container">
+    
+</div>
+
+<div id="image_list_container" class="jcarousel-skin-tango">
+    <ul>
+        {% for photo in gallery.photo_set.all %}
+            <li src="{{ photo.img.url }}"><img src="{% thumbnail photo.image 100x50  %}" /></li>
+        {% endfor %}
+    </ul>
+</div>
