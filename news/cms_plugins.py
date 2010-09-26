@@ -11,7 +11,7 @@ from models import Entry
 
 class CMSStartPageNewsPlugin(CMSPluginBase):
     model = CMSPlugin
-    name = 'Fancy Load Entries'
+    name = 'Startseiten News'
     render_template = 'start_page_news.html'
     
     def render(self, context, instance, placeholder):

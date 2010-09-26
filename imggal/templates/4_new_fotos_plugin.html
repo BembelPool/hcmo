@@ -1,0 +1,26 @@
+{% load thumbnail %}
+<h1 class="darkblue">Neue Fotos</h1>
+<div class="new-images-list">
+    {% for photo in photos %}
+        <div class="new-image left">
+            <img src="{% thumbnail photo.image 142x95 %}" width="142" height="95"
+                {% if forloop.counter == 2 or forloop.counter == 4 %}
+                 style="margin-left:10px;"
+                {% endif %}
+                />
+        </div>
+    {% endfor %}
+    <!--
+    <div class="new-image left" style="margin-left:10px;">
+        <img src="" width="142" height="95" />
+    </div>
+    
+    <div class="new-image left">
+        <img src="" width="142" height="95" />
+    </div>
+    
+    <div class="new-image left" style="margin-left:10px;">
+        <img src="" width="142" height="95" />
+    </div>
+    -->
+</div>

@@ -65,3 +65,8 @@ class Photo(models.Model):
 
 class GalleryPlugin(CMSPlugin):
     galleries = models.ManyToManyField(Gallery)
+    
+    
+class NewPhotosPlugin(CMSPlugin):
+    title = models.CharField(max_length=75)
+    

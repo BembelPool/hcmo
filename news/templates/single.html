@@ -1,4 +1,4 @@
-
+{% load thumbnail %}
 <div class="article">
     {{ entry.title }}
     <div class="right">
@@ -7,7 +7,7 @@
     <h1 class="darkblue">{{ entry.title }}</h1>
     <div class="article-date">{{ entry.posted }}</div>
     <div class="article-image left">
-        <img height="85" width="165" src="{{ entry.image.url }}">
+        <img height="85" width="165" src="{% thumbnail entry.image 165x85 %}">
     </div>
     <div class="article-content left">
        {{ entry.message }}
