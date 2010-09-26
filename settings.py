@@ -145,5 +145,11 @@ CMS_TEMPLATES = (
 
 CMS_MODERATOR = False
 CMS_SEO_FIELDS = True
+CMS_REDIRECTS = True
 
+#-----------------------------------------------------
+# sorl thumbnail settings 
+#
 
+THUMBNAIL_EXTENSION = 'png'
+THUMBNAIL_DEBUG = True
