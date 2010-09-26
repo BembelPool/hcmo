@@ -5,7 +5,7 @@ from cms.plugin_base import CMSPluginBase
 from cms.plugin_pool import plugin_pool
 from cms.models.pluginmodel import CMSPlugin
 
-from models import Gallery, GalleryPlugin, Photo, NewPhotosPlugin
+from models import Gallery, GalleryPlugin, Photo, NewPhotosPlugin, FourPhotosPlugin
 
 class CMSShowroomGalleryPlugin(CMSPluginBase):
     model = GalleryPlugin
@@ -27,7 +27,20 @@ class CMSNewPhotosPlugin(CMSPluginBase):
     
     def render(self, context, instance, placeholder):
         photos = Photo.objects.all()[:4]
-        context.update({'photos':photos})
+        context.update({'instance':instance,
+                        'photos':photos})
         return context
     
 plugin_pool.register_plugin(CMSNewPhotosPlugin)
+
+
+class CMSStaticPhotosPlugin(CMSPluginBase):
+    model = FourPhotosPlugin
+    name = '4 statische Fotos'
+    render_template = '4_static_fotos_plugin.html'
+    
+    def render(self, context, instance, placeholder):
+        context.update({'instance':instance })
+        return context
+    
+plugin_pool.register_plugin(CMSStaticPhotosPlugin)

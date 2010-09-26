@@ -1,0 +1,19 @@
+{% load thumbnail %}
+<h1 class="darkblue">{{ instance.title }}</h1>
+<div class="new-images-list">
+    <div class="new-image left">
+        <img src="{% thumbnail instance.top_left 142x95 %}" width="142" height="95" />
+    </div>
+
+    <div class="new-image left" style="margin-left:10px;">
+        <img src="{% thumbnail instance.top_right 142x95 %}" width="142" height="95" />
+    </div>
+    
+    <div class="new-image left">
+        <img src="{% thumbnail instance.bottom_left 142x95 %}" width="142" height="95" />
+    </div>
+    
+    <div class="new-image left" style="margin-left:10px;">
+        <img src="{% thumbnail instance.bottom_right 142x95 %}" width="142" height="95" />
+    </div>
+</div>

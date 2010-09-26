@@ -70,3 +70,10 @@ class GalleryPlugin(CMSPlugin):
 class NewPhotosPlugin(CMSPlugin):
     title = models.CharField(max_length=75)
     
+
+class FourPhotosPlugin(CMSPlugin):
+    title = models.CharField(max_length=75)
+    top_left = models.ImageField(upload_to="fourfotosplugin/")
+    top_right = models.ImageField(upload_to="fourfotosplugin/")
+    bottom_left = models.ImageField(upload_to="fourfotosplugin/")
+    bottom_right = models.ImageField(upload_to="fourfotosplugin/")
