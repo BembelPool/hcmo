@@ -1,4 +1,9 @@
-#image-container {width:971px;height:280px;padding:9px;background:#FFFFFF;}
+#image-container {width:971px;padding:9px;background:#FFFFFF;}
+
+#gallery-title {font-size:24px;}
+#image-title {font-size:12px;color:#56626B;margin-left:5px;}
+
+#image {text-align:center;margin-top:5px;}
 
 #image-list-container{width:989px;height:88px;background:#FFFFFF;margin-top:4px;}
 

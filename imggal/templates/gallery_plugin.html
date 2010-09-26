@@ -3,24 +3,30 @@
 {% block javascript %}
 <script type="text/javascript">
 jQuery(document).ready(function() {      
-    $('#gallery-container').load('/imggal/get_images_for/1/');
-    $('.more-galleries-list > li').click(function() {
+    var first_li = $('.more-galleries-list li:first');
+    
+    $('#gallery-container').load('/imggal/get_images_for/' + first_li.attr('galid') + '/');
+    $('#gallery-title').html(first_li.attr('galtitle'));
+    
+    $('.more-galleries-list li').click(function() {
 	   var galid = $(this).attr('galid');
+	   $('#gallery-title').html($(this).attr('galtitle'));
 	   $('#gallery-container').load('/imggal/get_images_for/' + galid + '/').fadeIn("slow");
+	   
     });
 });
 </script>
 {% endblock javascript %}
 
 <div id="gallery-container">
-    
+
 </div>
 
 <div id="more-galleries">
     <h1 class="darkblue">Weitere Gallerien</h1>
     <ul class="more-galleries-list"> 
     {% for gallery in galleries %}
-        <li galid="{{ gallery.id }}" class="{% if forloop.first %}active{% endif %}">{{ gallery }}</li>
+        <li galid="{{ gallery.id }}" galtitle="{{ gallery.title }}" class="{% if forloop.first %}active{% endif %}">{{ gallery }}</li>
     {% endfor %}
     </ul>
     <div class="clear"></div>

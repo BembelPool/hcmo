@@ -33,6 +33,8 @@ jQuery(document).ready(function() {
         if ($(this).hasClass('active'))
             return;
         
+        $('#image-title').html('-> ' + $(this).attr('title'))
+        
         // das aktuelle image auf das color thumb vom li setzen
         var image = $(this).find('img');
         image.attr('src', $(this).attr('thumb_color'));
@@ -48,7 +50,7 @@ jQuery(document).ready(function() {
         var img = new Image();
         $(img)
             .load(function () {
-                $("#image-container").html(this);
+                $("#image").html(this);
                 $(".loader").hide();
                 $(this).fadeIn();
             })
@@ -56,8 +58,6 @@ jQuery(document).ready(function() {
             })
             
             .attr('src', src)
-            .attr('width', 970)
-            .attr('height', 280)
             .fadeIn("slow");
         // Image geladen
     });
@@ -66,26 +66,30 @@ jQuery(document).ready(function() {
     var img = new Image();
     $(img)
         .load(function () {
-            $("#image-container").html(this);
+            $("#image").html(this);
             $(".loader").hide();
             $(this).fadeIn();
         })
         .error(function() {
         })
-        .attr('width', 970)
-        .attr('height', 280)
         .attr('src', first.attr("rel"))
         .fadeIn("slow");
     // Image geladen
+    
+    first.addClass('active');
+    var first_image = first.find('img');
+    first_image.attr('src', first.attr('thumb_color'));
+    $('#image-title').html('-> ' + first.attr('title'))
 });
 </script>
-<div id="image-container"></div>
+<div id="image-container">
+    <span id="gallery-title" class="darkblue"></span><span id="image-title"></span>
+    <div id="image"></div>
+</div>
 <div id="image-list-container" class="jcarousel-skin-tango">
     <ul>
         {% for photo in gallery.photo_set.all %}
-            <li rel="{% thumbnail photo.image 970x280 crop %}"
-                thumb_color="{% thumbnail photo.image 130x88 crop upscale %}"
-                thumb_bw="{% thumbnail photo.image 130x88 crop upscale bw %}" >
+            <li rel="{% thumbnail photo.image 970x280 crop %}" thumb_color="{% thumbnail photo.image 130x88 crop upscale %}" thumb_bw="{% thumbnail photo.image 130x88 crop upscale bw %}" title="{{ photo.title }}">
                 <img src="{% thumbnail photo.image 130x88 crop upscale bw %}" /></li>
         {% endfor %}
     </ul>
