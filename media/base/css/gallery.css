@@ -1,4 +1,6 @@
-#gallery_container {height:326px; background:#FFFFFF; }
+#image-container {width:971px;height:280px;padding:9px;background:#FFFFFF;}
+
+#image-list-container{width:989px;height:88px;background:#FFFFFF;margin-top:4px;}
 
 #more-galleries {margin-top:4px;background:#FFFFFF;padding:16px 31px;}
 ul.more-galleries-list {list-style:none;padding:16px 0 0 0;margin:0;}
