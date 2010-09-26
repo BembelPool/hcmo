@@ -143,6 +143,7 @@ CMS_LANGUAGES = (
 CMS_TEMPLATES = (
     ('cms/pages/default.html', 'Default'),
     ('cms/pages/home.html', 'Home'),
+    ('cms/pages/showroom.html', 'Showroom'),
     ('cms/default.html', 'Default'),
 )
 

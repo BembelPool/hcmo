@@ -12,7 +12,6 @@ class GalleryManager(models.Manager):
 
 class Gallery(models.Model):
     title = models.CharField(max_length=75)
-    slug = models.SlugField(max_length=75, unique=True)
     description = models.TextField(blank=True)
     published = models.BooleanField()
     created = models.DateTimeField(auto_now_add=True)
@@ -49,7 +48,6 @@ class Photo(models.Model):
     gallery = models.ForeignKey(Gallery)
     image = models.ImageField(upload_to='imggal/')
     title = models.CharField(max_length=75)
-    slug = models.SlugField(max_length=75, unique=True)
     description = models.TextField(blank=True)
     created = models.DateTimeField(auto_now_add=True)
     
