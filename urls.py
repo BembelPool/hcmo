@@ -8,9 +8,6 @@ urlpatterns = patterns('',
 
     (r'^site_media/(?P<path>.*)$', 'django.views.static.serve',
         {'document_root': settings.MEDIA_ROOT, 'show_indexes':True }),
-
-    url(r'^aktuelles/', include('zinnia.urls')),
-    url(r'^comments/', include('django.contrib.comments.urls')),
     
     (r'^admin/doc/', include('django.contrib.admindocs.urls')),
     (r'^admin/', include(admin.site.urls)),
