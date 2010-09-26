@@ -16,6 +16,26 @@ jQuery(document).ready(function() {
         itemLoadCallback: itemLoadCallbackFunction
     });
     
+    $('.jcarousel-item').hover(function(){
+        if (!$(this).hasClass('active')){
+            var thumb = $(this).find('img');
+            var thumb_src = thumb.attr('src');
+            var thumb_rel = thumb.attr('rel');
+        
+            thumb.attr('src', thumb_rel);
+            thumb.attr('rel', thumb_src);
+        }
+    }, function(){
+        if (!$(this).hasClass('active')){
+            var thumb = $(this).find('img');
+            var thumb_src = thumb.attr('src');
+            var thumb_rel = thumb.attr('rel');
+        
+            thumb.attr('src', thumb_rel);
+            thumb.attr('rel', thumb_src);
+        }
+    });
+    
     $('.jcarousel-item').click(function() {
     
         var last_active = $('#image-list-container ul').find('li.active').find('img');
@@ -25,12 +45,13 @@ jQuery(document).ready(function() {
         last_active.attr('src', last_active_rel);
         last_active.attr('rel', last_active_src);
         
+        $('#image-list-container ul').find('li.active').removeClass('active');
+        
         var thumb = $(this).find('img');
         var thumb_src = thumb.attr('src');
         var thumb_rel = thumb.attr('rel');
     
         if (!$(this).hasClass('active')){
-            console.log('not active');
             $(this).addClass('active');
             thumb.attr('src', thumb_rel);
             thumb.attr('rel', thumb_src);
