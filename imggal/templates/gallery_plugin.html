@@ -10,8 +10,8 @@ jQuery(document).ready(function() {
     
     $('.more-galleries-list li').click(function() {
 	   var galid = $(this).attr('galid');
-	   $('#gallery-title').html($(this).attr('galtitle'));
 	   $('#gallery-container').load('/imggal/get_images_for/' + galid + '/').fadeIn("slow");
+	   $('#gallery-title').html($(this).attr('galtitle'));
     });
 });
 </script>
