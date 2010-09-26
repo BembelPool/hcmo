@@ -1,10 +1,19 @@
 # -*- coding: utf-8 -*-
-# 
+#
+
 from django.db import models
 from cms.models.pluginmodel import CMSPlugin
 
 
 
+class SubPageTeaserPlugin(CMSPlugin):
+    title = models.CharField(max_length=75)
+    image = models.ImageField(upload_to='subpage')
+    teaser = models.TextField()
+    link = models.CharField(max_length=75, blank=True)
+    
+    
+"""
 class Sponsor(models.Model):
     image = models.ImageField(upload_to="sponsoren/")
     image_hover = models.ImageField(upload_to="sponsoren/")
@@ -24,11 +33,7 @@ class Sponsor(models.Model):
     
 class SponsorPlugin(CMSPlugin):
     sponsoren = models.ManyToManyField(Sponsor)
+"""
     
-    
-class SubPageTeaserPlugin(CMSPlugin):
-    title = models.CharField(max_length=75)
-    image = models.ImageField(upload_to='subpage')
-    teaser = models.TextField()
-    link = models.CharField(max_length=75, blank=True)
+
     

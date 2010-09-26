@@ -6,8 +6,9 @@ from cms.plugin_pool import plugin_pool
 
 from cms.models.pluginmodel import CMSPlugin
 
-from models import SponsorPlugin, SubPageTeaserPlugin
+from models import SubPageTeaserPlugin
 
+"""
 class CMSSponsorPlugin(CMSPluginBase):
     model = SponsorPlugin
     name = 'Sponsoren'
@@ -18,7 +19,7 @@ class CMSSponsorPlugin(CMSPluginBase):
         return context
     
 plugin_pool.register_plugin(CMSSponsorPlugin)
-
+"""
 
 class CMSSubPageTeaserPlugin(CMSPluginBase):
     model = SubPageTeaserPlugin
