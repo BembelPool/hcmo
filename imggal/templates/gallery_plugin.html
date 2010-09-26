@@ -9,7 +9,8 @@
 
 
 <script type="text/javascript">
-jQuery(document).ready(function() {      
+jQuery(document).ready(function() {
+    $('#galleries > li').unbind();
     $('#galleries > li').click(function() {
 	var galid = $(this).attr('galid');
 	// imggal/get_images_for/(\d+)

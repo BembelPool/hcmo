@@ -2,7 +2,7 @@
 #
 
 from django.db import models
-
+from cms.models.pluginmodel import CMSPlugin
 
 
 class GalleryManager(models.Manager):
@@ -62,3 +62,6 @@ class Photo(models.Model):
     _image_repr.short_description = "Image"
     _image_repr.allow_tags = True
 
+
+class GalleryPlugin(CMSPlugin):
+    galleries = models.ManyToManyField(Gallery)
