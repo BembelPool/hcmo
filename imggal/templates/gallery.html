@@ -60,6 +60,22 @@ jQuery(document).ready(function() {
             .fadeIn("slow");
         // Image geladen
     });
+    
+    var first = $('.jcarousel-item:first');
+    var img = new Image();
+    $(img)
+        .load(function () {
+            $("#image-container").html(this);
+            $(".loader").hide();
+            $(this).fadeIn();
+        })
+        .error(function() {
+        })
+        .attr('width', 970)
+        .attr('height', 280)
+        .attr('src', first.attr("rel"))
+        .fadeIn("slow");
+    // Image geladen
 });
 </script>
 <div id="image-container"></div>
