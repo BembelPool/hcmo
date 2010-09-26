@@ -17,46 +17,33 @@ jQuery(document).ready(function() {
     });
     
     $('.jcarousel-item').hover(function(){
-        if (!$(this).hasClass('active')){
-            var thumb = $(this).find('img');
-            var thumb_src = thumb.attr('src');
-            var thumb_rel = thumb.attr('rel');
+        if ($(this).hasClass('active'))
+            return;
+        var image = $(this).find('img');
+        image.attr('src', $(this).attr('thumb_color'));
         
-            thumb.attr('src', thumb_rel);
-            thumb.attr('rel', thumb_src);
-        }
     }, function(){
-        if (!$(this).hasClass('active')){
-            var thumb = $(this).find('img');
-            var thumb_src = thumb.attr('src');
-            var thumb_rel = thumb.attr('rel');
-        
-            thumb.attr('src', thumb_rel);
-            thumb.attr('rel', thumb_src);
-        }
+        if ($(this).hasClass('active'))
+            return;
+        var image = $(this).find('img');
+        image.attr('src', $(this).attr('thumb_bw'));
     });
     
     $('.jcarousel-item').click(function() {
-    
-        var last_active = $('#image-list-container ul').find('li.active').find('img');
-        var last_active_src = last_active.attr('src');
-        var last_active_rel = last_active.attr('rel');
+        if ($(this).hasClass('active'))
+            return;
         
-        last_active.attr('src', last_active_rel);
-        last_active.attr('rel', last_active_src);
+        // das aktuelle image auf das color thumb vom li setzen
+        var image = $(this).find('img');
+        image.attr('src', $(this).attr('thumb_color'));
+
+        // das image des letzten aktiven li auf dessen bw_thumb setzen
+        var last_active = $('#image-list-container ul').find('li.active');
+        last_active.removeClass('active').find('img').attr('src', last_active.attr('thumb_bw'));
         
-        $('#image-list-container ul').find('li.active').removeClass('active');
+        // aktuelle li active
+        $(this).addClass('active');
         
-        var thumb = $(this).find('img');
-        var thumb_src = thumb.attr('src');
-        var thumb_rel = thumb.attr('rel');
-    
-        if (!$(this).hasClass('active')){
-            $(this).addClass('active');
-            thumb.attr('src', thumb_rel);
-            thumb.attr('rel', thumb_src);
-        }
-    
         var src = $(this).attr("rel");
         var img = new Image();
         $(img)
@@ -72,13 +59,32 @@ jQuery(document).ready(function() {
             .fadeIn("slow");
         // Image geladen
     });
+    
+    var first = $('.jcarousel-item:first');
+    var img = new Image();
+    $(img)
+        .load(function () {
+            $("#image-container").html(this);
+            $(".loader").hide();
+            $(this).fadeIn();
+        })
+        .error(function() {
+        })
+        .attr('width', 970)
+        .attr('height', 280)
+        .attr('src', first.attr("rel"))
+        .fadeIn("slow");
+    // Image geladen
 });
 </script>
 <div id="image-container"></div>
 <div id="image-list-container" class="jcarousel-skin-tango">
     <ul>
         {% for photo in gallery.photo_set.all %}
-            <li rel="{{ photo.image.url }}"><img src="{% thumbnail photo.image 130x88 crop upscale bw %}" rel="{% thumbnail photo.image 130x88 crop upscale %}" /></li>
+            <li rel="{{ photo.image.url }}"
+                thumb_color="{% thumbnail photo.image 130x88 crop upscale %}"
+                thumb_bw="{% thumbnail photo.image 130x88 crop upscale bw %}" >
+                <img src="{% thumbnail photo.image 130x88 crop upscale bw %}" /></li>
         {% endfor %}
     </ul>
 </div>
