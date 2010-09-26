@@ -80,9 +80,6 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.request",
     "django.core.context_processors.media",
     "django.contrib.messages.context_processors.messages",
-    'zinnia.context_processors.media',
-    #'zinnia.context_processors.version',
-    
 )
 
 MIDDLEWARE_CLASSES = (
@@ -95,7 +92,6 @@ MIDDLEWARE_CLASSES = (
     'cms.middleware.media.PlaceholderMediaMiddleware',
     'cms.middleware.page.CurrentPageMiddleware',
     'cms.middleware.toolbar.ToolbarMiddleware',
-    #'cms.middleware.multilingual.MultilingualURLMiddleware',
 )
 
 ROOT_URLCONF = 'hcmo.urls'
@@ -143,6 +139,7 @@ CMS_LANGUAGES = (
 CMS_TEMPLATES = (
     ('cms/pages/default.html', 'Default'),
     ('cms/pages/home.html', 'Home'),
+    ('cms/pages/showroom.html', 'Showroom'),
     ('cms/default.html', 'Default'),
 )
 

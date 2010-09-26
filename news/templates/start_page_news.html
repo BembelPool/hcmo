@@ -1,5 +1,4 @@
 
-
 <script type="text/javascript">
     var entries = new Array();
     {% for entry in entries %}
@@ -7,14 +6,9 @@
     {% endfor %}
     
     $(document).ready(function(){
-        console.log(entries);
         for(i=0; i<entries.length; i++) {
             var id = entries[i];
-            console.log(id);
-            $('#entry_'+id).load('/news/single/'+id, function(data){
-                
-                console.log(data);
-            });
+            $('#entry_'+id).load('/news/single/'+id, function(data){});
         }
     });
 </script>
@@ -26,6 +20,3 @@
     </div>
 </div>
 {% endfor %}
-
-
-{{ entries }}
