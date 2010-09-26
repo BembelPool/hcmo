@@ -13,8 +13,6 @@ jQuery(document).ready(function() {
     $('#galleries > li').unbind();
     $('#galleries > li').click(function() {
 	var galid = $(this).attr('galid');
-	// imggal/get_images_for/(\d+)
-	$('gallery_container').remove();
 	$('#gallery_container').load('/imggal/get_images_for/' + galid + '/');
     });
 });

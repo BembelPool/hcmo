@@ -3,7 +3,6 @@
 <script type="text/javascript">
 function itemLoadCallbackFunction(carousel, state)
 {
-    console.log("itemLoadCallbackFunction");
     for (var i = carousel.first; i <= carousel.last; i++) {
         // Check if the item already exists
         if (!carousel.has(i)) {
@@ -13,26 +12,42 @@ function itemLoadCallbackFunction(carousel, state)
     }
 };
 
-jQuery(document).ready(function() {  
+jQuery(document).ready(function() {
+    
+    
     $('#image_list_container').jcarousel({
         itemLoadCallback: itemLoadCallbackFunction
     });
     
     $('.jcarousel-item').click(function() {
-	var src = $(this).attr("src");
-	console.log(src);
+	var src = $(this).attr("rel");
+        console.log(src);
+        var img = new Image();
+        $(img)
+            .load(function () {
+                $("#image_container").html(this);
+                $(".loader").hide();
+                $(this).fadeIn();
+            })
+            .error(function() {
+            })
+            .attr('width', 970)
+            .attr('height', 280)
+            .attr('src', src);
+        // Image geladen
     });
 });
 </script>
 
 <div id="image_container">
+    <!-- 970 x 280 -->
     
 </div>
 
 <div id="image_list_container" class="jcarousel-skin-tango">
     <ul>
         {% for photo in gallery.photo_set.all %}
-            <li src="{{ photo.img.url }}"><img src="{% thumbnail photo.image 100x50  %}" /></li>
+            <li rel="{{ photo.image.url }}"><img src="{% thumbnail photo.image 100x50  %}"  /></li>
         {% endfor %}
     </ul>
 </div>
