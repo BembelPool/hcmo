@@ -6,11 +6,11 @@ from cms.plugin_pool import plugin_pool
 
 from cms.models.pluginmodel import CMSPlugin
 
-from models import Sponsor
+from models import SponsorPlugin
 
 class CMSSponsorPlugin(CMSPluginBase):
-    model = Sponsor
-    name = 'Sponsor'
+    model = SponsorPlugin
+    name = 'Sponsoren'
     render_template = 'sponsor_entry.html'
     
     def render(self, context, instance, placeholder):

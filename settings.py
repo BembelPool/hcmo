@@ -117,6 +117,11 @@ INSTALLED_APPS = (
     'mptt',
     # django-cms plugins
     'cms.plugins.text',
+    'cms.plugins.file',
+    'cms.plugins.flash',
+    'cms.plugins.picture',
+    'cms.plugins.video',
+    
     
     # zinnia and deps
     #'tagging',

@@ -1,6 +1,46 @@
 {% extends 'base.html' %}
 {% load cms_tags %}
 
-{% block base_col %}
-    {% placeholder "content" %}
-{% endblock %}
+{% block stylesheet %}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/home.css" />
+
+<style type="text/css">
+/* stylesheets overrides */
+.default_content {
+    min-height:645px;
+    
+}
+</style>
+{% endblock stylesheet %}
+
+{% block base_content %}
+    <div id="left" class="left">
+        <h1>Sponsoren</h1>
+        {% placeholder default_sponsoren %}
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <div class="sponsor"></div>
+        <h1 style="padding-top:7px;">Facebook</h1>
+        <div class="facebook">
+            <div class="facebook-head">
+                <img src="#" height="37" width="37" class="left" />
+                <div class="headline left">
+                    Heiko-Motor..<span>auf Facebook</span>
+                </div>
+                <div class="ilike left">
+                    Dir gefällt das.&nbsp;&nbsp;<a href="#">Gefällt mir nicht mehr</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="right" class="left">
+        <div class="default_content article">
+            {% placeholder default_content %}
+            
+        </div>
+        
+    </div>
+    <div class="clear"></div>        
+{% endblock base_content %}
