@@ -1,0 +1,6 @@
+#gallery_container {height:326px; background:#FFFFFF; }
+
+#more-galleries {margin-top:4px;background:#FFFFFF;padding:16px 31px;}
+ul.more-galleries-list {list-style:none;padding:16px 0 0 0;margin:0;}
+ul.more-galleries-list li {float:left;color:#56626B;margin-right:34px;}
+ul.more-galleries-list li:hover {cursor:pointer;}

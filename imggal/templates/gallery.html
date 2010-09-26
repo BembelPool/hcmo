@@ -1,8 +1,7 @@
 {% load thumbnail %}
 
-<script type="text/javascript">
-function itemLoadCallbackFunction(carousel, state)
-{
+<script type="text/javascript">{
+function itemLoadCallbackFunction(carousel, state){
     for (var i = carousel.first; i <= carousel.last; i++) {
         // Check if the item already exists
         if (!carousel.has(i)) {
