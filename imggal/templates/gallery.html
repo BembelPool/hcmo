@@ -17,7 +17,26 @@ jQuery(document).ready(function() {
     });
     
     $('.jcarousel-item').click(function() {
-    var src = $(this).attr("rel");
+    
+        var last_active = $('#image-list-container ul').find('li.active').find('img');
+        var last_active_src = last_active.attr('src');
+        var last_active_rel = last_active.attr('rel');
+        
+        last_active.attr('src', last_active_rel);
+        last_active.attr('rel', last_active_src);
+        
+        var thumb = $(this).find('img');
+        var thumb_src = thumb.attr('src');
+        var thumb_rel = thumb.attr('rel');
+    
+        if (!$(this).hasClass('active')){
+            console.log('not active');
+            $(this).addClass('active');
+            thumb.attr('src', thumb_rel);
+            thumb.attr('rel', thumb_src);
+        }
+    
+        var src = $(this).attr("rel");
         var img = new Image();
         $(img)
             .load(function () {
@@ -39,7 +58,7 @@ jQuery(document).ready(function() {
 <div id="image-list-container" class="jcarousel-skin-tango">
     <ul>
         {% for photo in gallery.photo_set.all %}
-            <li rel="{{ photo.image.url }}"><img src="{% thumbnail photo.image 130x88 crop upscale %}"  /></li>
+            <li rel="{{ photo.image.url }}"><img src="{% thumbnail photo.image 130x88 crop upscale bw %}" rel="{% thumbnail photo.image 130x88 crop upscale %}" /></li>
         {% endfor %}
     </ul>
 </div>
