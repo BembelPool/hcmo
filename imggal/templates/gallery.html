@@ -82,7 +82,7 @@ jQuery(document).ready(function() {
 <div id="image-list-container" class="jcarousel-skin-tango">
     <ul>
         {% for photo in gallery.photo_set.all %}
-            <li rel="{{ photo.image.url }}"
+            <li rel="{% thumbnail photo.image 970x280 crop %}"
                 thumb_color="{% thumbnail photo.image 130x88 crop upscale %}"
                 thumb_bw="{% thumbnail photo.image 130x88 crop upscale bw %}" >
                 <img src="{% thumbnail photo.image 130x88 crop upscale bw %}" /></li>
