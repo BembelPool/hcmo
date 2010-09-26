@@ -24,3 +24,11 @@ class Sponsor(models.Model):
     
 class SponsorPlugin(CMSPlugin):
     sponsoren = models.ManyToManyField(Sponsor)
+    
+    
+class SubPageTeaserPlugin(CMSPlugin):
+    title = models.CharField(max_length=75)
+    image = models.ImageField(upload_to='subpage')
+    teaser = models.TextField()
+    link = models.CharField(max_length=75, blank=True)
+    

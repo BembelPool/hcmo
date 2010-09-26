@@ -1,0 +1,18 @@
+{% load thumbnail %}
+
+
+    <div class="right">
+        <a href="#"><img src="/site_media/base/gfx/i-like.png"></a>
+    </div>
+    <h1 class="darkblue">{{ instance.title }}</h1>
+    <div class="article-image left">
+        <img height="85" width="165" src="{% thumbnail instance.image 165x85 crop %}">
+    </div>
+    <div class="article-content left">
+       {{ instance.teaser }}
+       <div class="article-links">
+            <div class="article-readmore left"><a href="{{ instance.link }}">+ Weiterlesen ...</a></div>
+            <!--<div class="article-email left"><a href="">+ Per E-Mail versenden</a></div>-->
+        </div>
+    </div>
+    <div class="clear"></div>

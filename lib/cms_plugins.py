@@ -6,7 +6,7 @@ from cms.plugin_pool import plugin_pool
 
 from cms.models.pluginmodel import CMSPlugin
 
-from models import SponsorPlugin
+from models import SponsorPlugin, SubPageTeaserPlugin
 
 class CMSSponsorPlugin(CMSPluginBase):
     model = SponsorPlugin
@@ -20,4 +20,14 @@ class CMSSponsorPlugin(CMSPluginBase):
 plugin_pool.register_plugin(CMSSponsorPlugin)
 
 
+class CMSSubPageTeaserPlugin(CMSPluginBase):
+    model = SubPageTeaserPlugin
+    name = 'Unterseiten Teaser'
+    render_template = 'subpage_teaser_plugin.html'
+    
+    def render(self, context, instance, placeholder):
+        context.update({'instance' : instance})
+        return context
+    
+plugin_pool.register_plugin(CMSSubPageTeaserPlugin)
 
