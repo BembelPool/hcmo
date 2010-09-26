@@ -21,11 +21,14 @@ h1.darkblue {font-size:24px;color:#003B62;margin:0;padding:0;font-weight:normal;
 #head-logo {width:223px;height:40px;padding:7px 0 0 24px;}
 
 #head-navigation {height:47px;width:728px;background:url('../gfx/head-navigation-bg.png') repeat-x;}
-ul#menu {float:right;padding:6px 10px 0 0;margin:0;list-style:none;}
-ul#menu li {float:left;margin:0 15px 0 10px;}
-ul#menu li a {text-decoration:none;color:#FFFFFF;font-size:16px;display:block;padding:11px 0px 0 0px;height:30px;text-shadow: 0px 1px 0px #093765;}
-ul#menu li.selected a {background:url('../gfx/navigation-a-bg.png') left no-repeat;padding:11px 0 0 15px;}
+ul#menu {float:right;padding:8px 10px 0 0;margin:0;list-style:none;}
+ul#menu li {float:left;margin:0 15px 0 15px;}
+ul#menu li a {text-decoration:none;color:#FFFFFF;font-size:14px;display:block;padding:9px 0px 0 0px;height:30px;text-shadow: 0px 1px 0px #093765;font-weight:bold;}
+ul#menu li.selected a {background:url('../gfx/navigation-a-bg.png') left no-repeat;padding:9px 0 0 15px;}
 ul#menu li.selected {background:url('../gfx/navigation-li-bg.png') right no-repeat;padding:0 15px 0 0;margin:0 0 0 0;}
+
+ul#menu li:hover a {background:url('../gfx/navigation-a-bg.png') left no-repeat;padding:9px 0 0 15px;}
+ul#menu li:hover {background:url('../gfx/navigation-li-bg.png') right no-repeat;padding:0 15px 0 0;margin:0 0 0 0;}
 
 #head-image {margin-top:15px;}
 
