@@ -3,7 +3,7 @@
 {% block javascript %}
 <script type="text/javascript">
 jQuery(document).ready(function() {      
-    $('#more-galleries > li').click(function() {
+    $('.more-galleries-list > li').click(function() {
 	var galid = $(this).attr('galid');
 	$('#gallery_container').load('/imggal/get_images_for/' + galid + '/');
     });
