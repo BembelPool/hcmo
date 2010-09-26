@@ -41,27 +41,9 @@ $(document).ready(function(){});
 {% endblock javascript %}
 
 {% block base_content %}
-    <div id="left" class="left">
-        <h1>Sponsoren</h1>
-        {% placeholder home_sponsoren %}
-        <div class="sponsor"></div>
-        <div class="sponsor"></div>
-        <div class="sponsor"></div>
-        <div class="sponsor"></div>
-        <div class="sponsor"></div>
-        <h1 style="padding-top:7px;">Facebook</h1>
-        <div class="facebook">
-            <div class="facebook-head">
-                <img src="#" height="37" width="37" class="left" />
-                <div class="headline left">
-                    Heiko-Motor..<span>auf Facebook</span>
-                </div>
-                <div class="ilike left">
-                    Dir gefällt das.&nbsp;&nbsp;<a href="#">Gefällt mir nicht mehr</a>
-                </div>
-            </div>
-        </div>
-    </div>
+    
+    {% include "cms/pages/_leftcontent.html" %}
+    
     <div id="right" class="left">
         {% placeholder home_content_top %}
         
@@ -74,6 +56,8 @@ $(document).ready(function(){});
         </div>
         
         <div class="new-movies left">
+            {% placeholder home_bottom_right %}
+            <!--
             <h1 class="darkblue">Neue Videos</h1>
             <div class="new-movies-box">
                 <div class="new-movies-pre">
@@ -84,6 +68,7 @@ $(document).ready(function(){});
                 Länge 00:22
                 </div>
             </div>
+            -->
         </div>
     </div>
     <div class="clear"></div>        
