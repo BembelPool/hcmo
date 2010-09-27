@@ -1,14 +1,11 @@
-# -*- coding: utf-8 -*-
 from django import forms
 #import settings
 from stopspam.forms import HoneyPotForm, RecaptchaForm, AkismetForm
   
 class HoneyPotContactForm(HoneyPotForm):
-    givenname = forms.CharField()
-    surname   = forms.CharField()
-    email     = forms.EmailField()
-    send_copy = forms.BooleanField()
-    content   = forms.CharField(widget=forms.Textarea())
+    email 	= forms.EmailField()
+    subject	= forms.CharField(required=False)
+    content	= forms.CharField(widget=forms.Textarea())
 
 
 class AkismetContactForm(AkismetForm):

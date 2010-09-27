@@ -2,18 +2,31 @@
 <h1 class="darkblue">{{ instance.title }}</h1>
 <div class="new-images-list">
     <div class="new-image left">
-        <img src="{% thumbnail instance.top_left 142x95 %}" width="142" height="95" />
+        <a href="{% thumbnail instance.top_left 1024x786 crop %}"><img src="{% thumbnail instance.top_left 142x95 %}" width="142" height="95" /></a>
     </div>
 
     <div class="new-image left" style="margin-left:10px;">
-        <img src="{% thumbnail instance.top_right 142x95 %}" width="142" height="95" />
+        <a href="{% thumbnail instance.top_right 1024x786 crop %}"><img src="{% thumbnail instance.top_right 142x95 %}" width="142" height="95" /></a>
     </div>
     
     <div class="new-image left">
-        <img src="{% thumbnail instance.bottom_left 142x95 %}" width="142" height="95" />
+        <a href="{% thumbnail instance.bottom_left 1024x786 crop %}"><img src="{% thumbnail instance.bottom_left 142x95 %}" width="142" height="95" /></a>
     </div>
     
     <div class="new-image left" style="margin-left:10px;">
-        <img src="{% thumbnail instance.bottom_right 142x95 %}" width="142" height="95" />
+        <a href="{% thumbnail instance.bottom_right 1024x786 crop %}"><img src="{% thumbnail instance.bottom_right 142x95 %}" width="142" height="95" /></a>
     </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.new-image a').lightBox({
+        fixedNavigation:true,
+        imageLoading: '{{ MEDIA_URL }}base/jquery-lightbox/images/lightbox-ico-loading.gif',
+		imageBtnPrev: '{{ MEDIA_URL }}base/jquery-lightbox/images/lightbox-btn-prev.gif',
+		imageBtnNext: '{{ MEDIA_URL }}base/jquery-lightbox/images/lightbox-btn-next.gif',	
+		imageBtnClose: '{{ MEDIA_URL }}base/jquery-lightbox/images/lightbox-btn-close.gif',
+		imageBlank:	'{{ MEDIA_URL }}base/jquery-lightbox/images/lightbox-blank.gif',
+    });
+});
+</script>

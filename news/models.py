@@ -12,13 +12,14 @@ class EntryManager(models.Manager):
 
 
 class Entry(models.Model):
-    title = models.CharField(max_length=100)
-    slug = models.CharField(max_length=100)
-    published = models.BooleanField(default=False)
-    posted = models.DateField()
-    image = models.ImageField(upload_to="news_images/")
+    title = models.CharField("Titel", max_length=100)
+    slug = models.CharField("Slug", max_length=100)
+    published = models.BooleanField("Veröffentlicht", default=False)
+    posted = models.DateField("Datum")
+    image = models.ImageField("Bild", upload_to="news_images/")
     
-    message = models.TextField()
+    teaser = models.TextField("Teaser", blank=True)
+    message = models.TextField("Nachricht")
     
     def __unicode__(self):
         return u"%s" % self.title
