@@ -131,6 +131,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'imggal',
     'news',
+    'cmsplugin_contact',
 )
 
 #-----------------------------------------------------
