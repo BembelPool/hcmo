@@ -1,7 +1,10 @@
 {% extends "base.html" %}
 
+{% load thumbnail %}
+
 {% block stylesheet %}
 <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/news.css" />
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/no-banner.css" />
 {% endblock stylesheet %}
 
 {% block base_content %}
@@ -11,20 +14,23 @@
     </div>
     <h1 class="darkblue">{{ details_entry.title }}</h1>
     <div class="single-article-date">{{ details_entry.posted }}</div>
-    <div class="single-article-image left">
-        <img height="145" width="283" src="{# thumbnail entry.image 283x145 crop upscale #}">
-    </div>
     <div class="single-article-content left">
-       {{ entry.message }}
+        <div class="single-article-image left">
+            <img height="145" width="283" src="{% thumbnail details_entry.image 283x145 crop upscale %}">
+        </div>
+        {{ details_entry.message }}
     </div>
     <div class="clear"></div>
 </div>
 <div id="latest-news" class="left">
-    <ul id="id">
-        {% for entry in latest %}
-            <li>{{ entry }}</li>
-        {% endfor %}
-    </ul>
+    <h1 class="more-news">Weitere News</h1>
+    {% for entry in latest %}
+    <div class="latest-news-entry">
+        <h1 class="darkblue">{{ entry }}</h1>
+        <span class="single-article-date">{{ details_entry.posted }}</span>
+        <div class="read-more"><a href="#">Weiterlesen ...</a></div>
+    </div>
+    {% endfor %}
 </div>
 <div class="clear"></div>
 {% endblock base_content %}

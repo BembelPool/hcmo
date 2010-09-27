@@ -6,12 +6,17 @@
 
 h2.description {font-size:14px;margin:0;padding:0;font-weight:normal;color:#0058A1;}
 
-.single-article {padding:14px 14px 14px 14px;background:#FFFFFF;}
+.single-article {width:638px;padding:14px 14px 14px 14px;background:#FFFFFF;}
+.single-article-date {color:#56626B;}
+.single-article-image {width:295px;margin-top:7px;}
+.single-article-image img {border:1px solid #000000;}
+
+h1.more-news {color:#FFFFFF;padding:10px 0 13px 20px;margin:0 0 0 0;}
+
+.latest-news-entry {width:279px;background:#FFFFFF;margin:0 0 0 12px;padding:16px 8px;}
+.read-more {text-align: right;}
+.read-more a {color:#56626B;text-decoration:none;}
 /*
-.article {width:634px;padding:17px 19px 23px 14px;background:#FFFFFF;margin:0 0 1px 0;}
-.article-date {color:#56626B;}
-.article-image {width:167px;margin-top:7px;}
-.article-image img {border:1px solid #000000;}
 .article-content {width:454px;margin:7px 0 0 12px;}
 .article-links {width:454px;margin:7px 0 0 0;}
 .article-readmore {width:133px;}
