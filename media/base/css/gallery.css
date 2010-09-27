@@ -4,6 +4,8 @@
 #gallery-title {margin-left:21px;font-size:24px;color:#003B62;}
 #image-title {font-size:12px;color:#56626B;margin-left:5px;}
 
+#image-description {position:absolute;background:red;width:970px;height:50px;}
+
 #image {text-align:center;margin-top:5px;}
 
 #image-list-container{width:989px;height:88px;background:#FFFFFF;margin-top:4px;}
