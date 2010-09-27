@@ -1,23 +1,35 @@
-{% load thumbnail %}
+{% extends "base.html" %}
+
+
+{% block base_content %}
+
+{{ details_entry }}
 
 <div class="article">
     <div class="right">
-        
         <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fexample.com%2Fpage%2Fto%2Flike&amp;layout=button_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
         
         <a href="#"><img src="/site_media/base/gfx/i-like.png"></a>
     </div>
-    <h1 class="darkblue">{{ entry.title }}</h1>
-    <div class="article-date">{{ entry.posted }}</div>
+    <h1 class="darkblue">a {{ details_entry.title }}</h1>
+    <div class="article-date">{{ details_entry.posted }}</div>
     <div class="article-image left">
-        <img height="85" width="165" src="{% thumbnail entry.image 165x85 crop upscale %}">
+        <img height="85" width="165" src="{# thumbnail entry.image 165x85 crop upscale #}">
     </div>
     <div class="article-content left">
        {{ entry.message }}
-       <div class="article-links">
-            <div class="article-readmore left"><a href="/news/{{ entry.slug }}">+ Weiterlesen ...</a></div>
-            <div class="article-email left"><a href="">+ Per E-Mail versenden</a></div>
-        </div>
     </div>
     <div class="clear"></div>
 </div>
+
+<!-- Hier muss der Rechte Balken hin -->
+    <hr />
+    {{ latest }}
+    <hr />
+    <ul id="id">
+        {% for entry in latest %}
+            <li>{{ entry }}</li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

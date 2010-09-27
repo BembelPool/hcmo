@@ -6,7 +6,7 @@ from django.db import models
 
 
 
-class EntryManager(models.Manager):
+class EntryManager(models.Manager):     
      def get_query_set(self):
         return super(EntryManager, self).get_query_set().filter(published=True)
 
@@ -20,6 +20,9 @@ class Entry(models.Model):
     
     teaser = models.TextField("Teaser", blank=True)
     message = models.TextField("Nachricht")
+    
+    admin_objects = models.Manager()
+    objects = EntryManager()
     
     def __unicode__(self):
         return u"%s" % self.title

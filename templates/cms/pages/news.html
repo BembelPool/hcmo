@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load cms_tags %}
+
+{% block stylesheet %}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/news.css" />
+{% endblock stylesheet %}
+
+{% block base_content %}
+    <div id="left" class="left">
+        {% placeholder new_left_content %}
+    </div>
+    
+    <div id="right" class="right">
+        {% placeholder news_right_content %}
+    </div>
+    <div class="clear"></div>     
+{% endblock base_content %}
