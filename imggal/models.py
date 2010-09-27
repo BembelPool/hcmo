@@ -11,10 +11,10 @@ class GalleryManager(models.Manager):
 
 
 class Gallery(models.Model):
-    title = models.CharField(max_length=75)
-    description = models.TextField(blank=True)
-    published = models.BooleanField()
-    created = models.DateTimeField(auto_now_add=True)
+    title = models.CharField("Titel", max_length=75)
+    description = models.TextField("Beschreibung", blank=True)
+    published = models.BooleanField("Veröffentlicht")
+    created = models.DateTimeField("Angelegt", auto_now_add=True)
     
     admin_objects = models.Manager()
     objects = GalleryManager()
@@ -46,10 +46,10 @@ class PhotoManager(models.Manager):
 
 class Photo(models.Model):
     gallery = models.ForeignKey(Gallery)
-    image = models.ImageField(upload_to='imggal/')
-    title = models.CharField(max_length=75)
-    description = models.TextField(blank=True)
-    created = models.DateTimeField(auto_now_add=True)
+    image = models.ImageField("Bild", upload_to='imggal/')
+    title = models.CharField("Titel", max_length=75)
+    description = models.TextField("Beschreibung", blank=True)
+    created = models.DateTimeField("Angelegt", auto_now_add=True)
     
     admin_objects = models.Manager()
     objects = PhotoManager()
@@ -68,12 +68,12 @@ class GalleryPlugin(CMSPlugin):
     
     
 class NewPhotosPlugin(CMSPlugin):
-    title = models.CharField(max_length=75)
+    title = models.CharField("Titel", max_length=75)
     
 
 class FourPhotosPlugin(CMSPlugin):
-    title = models.CharField(max_length=75)
-    top_left = models.ImageField(upload_to="fourfotosplugin/")
-    top_right = models.ImageField(upload_to="fourfotosplugin/")
-    bottom_left = models.ImageField(upload_to="fourfotosplugin/")
-    bottom_right = models.ImageField(upload_to="fourfotosplugin/")
+    title = models.CharField("Titel", max_length=75)
+    top_left = models.ImageField("Links oben", upload_to="fourfotosplugin/")
+    top_right = models.ImageField("Rechts oben", upload_to="fourfotosplugin/")
+    bottom_left = models.ImageField("Links unten", upload_to="fourfotosplugin/")
+    bottom_right = models.ImageField("Rechts unten", upload_to="fourfotosplugin/")
