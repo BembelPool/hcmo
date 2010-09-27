@@ -1,9 +1,12 @@
 
-#left {width:665px; background-color:#fff;}
+#left {width:666px;}
 #left a {color:#56626B;text-decoration:none;}
+
 #right {width:295px; border:1px solid #000; }
+
 h2.description {font-size:14px;margin:0;padding:0;font-weight:normal;color:#0058A1;}
 
+.single-article {padding:14px 14px 14px 14px;background:#FFFFFF;}
 /*
 .article {width:634px;padding:17px 19px 23px 14px;background:#FFFFFF;margin:0 0 1px 0;}
 .article-date {color:#56626B;}

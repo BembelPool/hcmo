@@ -1,35 +1,30 @@
 {% extends "base.html" %}
 
+{% block stylesheet %}
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/news.css" />
+{% endblock stylesheet %}
 
 {% block base_content %}
-
-{{ details_entry }}
-
-<div class="article">
+<div class="single-article left">
     <div class="right">
         <iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fexample.com%2Fpage%2Fto%2Flike&amp;layout=button_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;colorscheme=light&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:450px; height:21px;" allowTransparency="true"></iframe>
-        
-        <a href="#"><img src="/site_media/base/gfx/i-like.png"></a>
     </div>
-    <h1 class="darkblue">a {{ details_entry.title }}</h1>
-    <div class="article-date">{{ details_entry.posted }}</div>
-    <div class="article-image left">
-        <img height="85" width="165" src="{# thumbnail entry.image 165x85 crop upscale #}">
+    <h1 class="darkblue">{{ details_entry.title }}</h1>
+    <div class="single-article-date">{{ details_entry.posted }}</div>
+    <div class="single-article-image left">
+        <img height="145" width="283" src="{# thumbnail entry.image 283x145 crop upscale #}">
     </div>
-    <div class="article-content left">
+    <div class="single-article-content left">
        {{ entry.message }}
     </div>
     <div class="clear"></div>
 </div>
-
-<!-- Hier muss der Rechte Balken hin -->
-    <hr />
-    {{ latest }}
-    <hr />
+<div id="latest-news" class="left">
     <ul id="id">
         {% for entry in latest %}
             <li>{{ entry }}</li>
         {% endfor %}
     </ul>
-
-{% endblock %}
+</div>
+<div class="clear"></div>
+{% endblock base_content %}

@@ -23,7 +23,7 @@ class CMSStartPageNewsPlugin(CMSPluginBase):
 plugin_pool.register_plugin(CMSStartPageNewsPlugin)
 
 
-
+"""
 class CMSDetailNewsPlugin(CMSPluginBase):
     model = CMSPlugin
     name = 'News Detail Ansicht'
@@ -51,3 +51,4 @@ class CMSLatesNewsListPlugin(CMSPluginBase):
         return context
     
 plugin_pool.register_plugin(CMSLatesNewsListPlugin)
+"""

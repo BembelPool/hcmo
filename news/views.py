@@ -23,7 +23,7 @@ def index(request):
 def details(request, slug):
     print "defauls"
     print slug
-    details_entry= Entry.objects.filter(slug=slug)
+    details_entry= Entry.objects.filter(slug=slug)[0]
     print details_entry
     latest_entries = Entry.objects.all()[:5]
     print latest_entries
