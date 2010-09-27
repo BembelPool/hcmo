@@ -5,9 +5,13 @@
 jQuery(document).ready(function() {      
     var first_li = $('.more-galleries-list li:first');
     
+    console.log(first_li);
+    
     $('#gallery-container').load('/imggal/get_images_for/' + first_li.attr('galid') + '/', function() {
 		$('#gallery-title').html(first_li.attr('galtitle'));
 	}).fadeIn("slow");
+	
+	console.log(first_li.attr('galtitle'));
     
     $('.more-galleries-list li').click(function() {
 	   var galid = $(this).attr('galid');

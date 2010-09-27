@@ -17,24 +17,24 @@ MANAGERS = ADMINS
 
 DATABASES = {
     
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'heicmo',
-        'USER': 'root', 
-        'PASSWORD': 'hjk90ma',
-        'HOST': '80.246.57.155',
-        'PORT': '3306',
-    }
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'heicmo',
+#        'USER': 'root', 
+#        'PASSWORD': 'hjk90ma',
+#        'HOST': '80.246.57.155',
+#        'PORT': '3306',
+#    }
         
     
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': join(PROJECT_ROOT, 'db.sqlite'),
-#        'USER': '', 
-#        'PASSWORD': '',
-#        'HOST': '',
-#        'PORT': '',
-#    }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': join(PROJECT_ROOT, 'db.sqlite'),
+        'USER': '', 
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
     
 }
 
