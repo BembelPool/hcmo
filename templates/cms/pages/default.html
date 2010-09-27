@@ -15,11 +15,13 @@
 {% block base_content %}
     
     {% include "cms/pages/_leftcontent.html" %}
-    </div>
+    
     <div id="right" class="left">
-        <div class="default_content right-content">
-            {% placeholder default_content %}
-        </div>
+        {% placeholder default_content %}
     </div>
+<!--
+    <div class="default_content right-content">
+    </div>
+-->
     <div class="clear"></div>     
 {% endblock base_content %}

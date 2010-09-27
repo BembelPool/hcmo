@@ -13,10 +13,13 @@
 		<link type="image/png" rel="shortcut icon"  href="{{ MEDIA_URL }}base/gfx/favicon.png" />
 		
 		<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/base.css" />
+        <link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/jquery-lightbox/css/jquery.lightbox-0.5.css" />
+        
 		{% block stylesheet %}{% endblock stylesheet %}
         
 		<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/de_DE"></script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ MEDIA_URL }}base/jquery-lightbox/js/jquery.lightbox-0.5.pack.js"></script>
 		{% block javascript %}{% endblock javascript %}
 	</head>
 	<body>
