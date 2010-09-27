@@ -34,6 +34,13 @@ ul#menu li:hover {background:url('../gfx/navigation-li-bg.png') right no-repeat;
 
 #content {width:989px;background:url('../gfx/content-bg.png') right repeat-y; margin:24px 0 0 0;}
 
+#left {width:296px;}
+#right {width:667px;padding:13px;}
+#right a {color:#56626B;text-decoration:none;}
+.right-content {width:634px;padding:14px 19px 14px 14px;background:#FFFFFF;margin:0 0 1px 0;}
+
+.sponsor {width:290px;height:73px;background:#FFFFFF;margin:0 0 4px 5px;}
+
 #footer {height:48px;width:989px;padding:25px 0 55px 0;background:url('../gfx/footer-bg.png') no-repeat top right;}
 .footer-shadow {box-shadow: 0px 18px 11px #000000; -moz-box-shadow: 0px 18px 11px #000000; -webkit-box-shadow: 0px 18px 11px #000000;}
 #footer-content {width:951px;text-align:right;color:#0058A1;height:11px;background:#FFFFFF;padding:19px;}

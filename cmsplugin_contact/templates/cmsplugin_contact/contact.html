@@ -1,0 +1,62 @@
+{% load i18n %}
+
+{% if form %}
+{{ form.errors }}
+	<form action='' method="POST">
+
+        <p {% if form.givenname.errors %}class="error"{% endif %}>
+            <label>Vorname</label>
+            {{ form.givenname }}
+
+            {% if form.givenname.errors %}
+                {% for error in form.givenname.errors %}
+                    <span class="error_msg">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        
+        <p {% if form.surname.errors %}class="error"{% endif %}>
+            <label>Nachname</label>
+            {{ form.surname }}
+            
+            {% if form.surname.errors %}
+                {% for error in form.surname.errors %}
+                    <span class="error_msg">{{ error }}</span>
+                {% endfor %}
+            {% endif %}
+        </p>
+        
+        
+        <p {% if form.email.errors %}class="error"{% endif %}>
+			<label>{{ contact.email_label }}</label>
+				{{ form.email }}
+			{% if form.email.errors %}
+				{% for error in form.email.errors %}
+					<span class="error_msg">{{ error }}</span>
+				{% endfor %}
+			{% endif %}
+		</p>
+		
+		<p {% if form.content.errors %}class="error"{% endif %}>
+			<label>{{ contact.content_label }}</label>
+				{{ form.content }}
+			{% if form.content.errors %}
+				{% for error in form.content.errors %}
+					<span class="error_msg">{{ error }}</span>
+				{% endfor %}
+			{% endif %}
+		</p>
+
+		{{ form.send_copy }}
+		<br />
+		
+		<p>
+			<button>{{ contact.submit }}</button>
+		</p>
+		
+		{% csrf_token %}
+	</form>
+
+{% else %}
+	<h2>{{ contact.thanks }}</h2>
+{% endif %}

@@ -1,6 +1,7 @@
 #image-container {width:971px;padding:9px;background:#FFFFFF;}
 
-#gallery-title {font-size:24px;}
+#ilike {margin-right:13px;}
+#gallery-title {margin-left:21px;font-size:24px;color:#003B62;}
 #image-title {font-size:12px;color:#56626B;margin-left:5px;}
 
 #image {text-align:center;margin-top:5px;}

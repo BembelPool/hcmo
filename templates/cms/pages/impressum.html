@@ -2,24 +2,19 @@
 {% load cms_tags %}
 
 {% block stylesheet %}
-<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/home.css" />
-
-<style type="text/css">
-/* stylesheets overrides */
-.default_content {
-    min-height:645px;
-}
-</style>
+<link type="text/css" rel="stylesheet" href="{{ MEDIA_URL }}base/css/impressum.css" />
 {% endblock stylesheet %}
 
+{% block bannerimage %}
+<img src="{{ MEDIA_URL }}base/gfx/impressum.jpg" />
+{% endblock bannerimage %}
+
 {% block base_content %}
-    
     {% include "cms/pages/_leftcontent.html" %}
-    
     <div id="right" class="left">
         <div class="default_content right-content">
             {% placeholder default_content %}
         </div>
     </div>
-    <div class="clear"></div>     
+    <div class="clear"></div>
 {% endblock base_content %}

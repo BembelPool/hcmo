@@ -5,13 +5,17 @@
 jQuery(document).ready(function() {      
     var first_li = $('.more-galleries-list li:first');
     
-    $('#gallery-container').load('/imggal/get_images_for/' + first_li.attr('galid') + '/');
-    $('#gallery-title').html(first_li.attr('galtitle'));
+    $('#gallery-container').load('/imggal/get_images_for/' + first_li.attr('galid') + '/', function() {
+		$('#gallery-title').html(first_li.attr('galtitle'));
+	}).fadeIn("slow");
     
     $('.more-galleries-list li').click(function() {
 	   var galid = $(this).attr('galid');
-	   $('#gallery-container').load('/imggal/get_images_for/' + galid + '/').fadeIn("slow");
-	   $('#gallery-title').html($(this).attr('galtitle'));
+
+	   var galtitle = $(this).attr('galtitle');
+	   $('#gallery-container').load('/imggal/get_images_for/' + galid + '/', function() {
+			$('#gallery-title').html(galtitle);
+		}).fadeIn("slow");
     });
 });
 </script>
@@ -25,7 +29,7 @@ jQuery(document).ready(function() {
     <h1 class="darkblue">Weitere Gallerien</h1>
     <ul class="more-galleries-list"> 
     {% for gallery in galleries %}
-        <li galid="{{ gallery.id }}" galtitle="{{ gallery.title }}" class="{% if forloop.first %}active{% endif %}">{{ gallery }}</li>
+        <li galid="{{ gallery.id }}" galtitle="{{ gallery.title }}"  class="{% if forloop.first %}active{% endif %}">{{ gallery }}</li>
     {% endfor %}
     </ul>
     <div class="clear"></div>
