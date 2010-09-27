@@ -1,5 +1,6 @@
 # -*- coding:utf-8 -*-
 #
+#
 
 from django.db import models
 
@@ -24,6 +25,8 @@ class Entry(models.Model):
     admin_objects = models.Manager()
     objects = EntryManager()
     
+    def get_absolute_url(self):
+          return "/news/%s" % self.slug
     def __unicode__(self):
         return u"%s" % self.title
     
