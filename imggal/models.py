@@ -50,6 +50,7 @@ class Photo(models.Model):
     title = models.CharField("Titel", max_length=75)
     description = models.TextField("Beschreibung", blank=True)
     created = models.DateTimeField("Angelegt", auto_now_add=True)
+    order = models.IntegerField("Reihenfolge", default=0)
     
     admin_objects = models.Manager()
     objects = PhotoManager()
