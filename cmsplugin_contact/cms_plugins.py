@@ -56,19 +56,19 @@ class ContactPlugin(CMSPluginBase):
             headers = {
                 'Reply-To': form.cleaned_data['email']
             },)
-        email_message.send(fail_silently=True)
+        email_message.send(fail_silently=False)
     
     def render(self, context, instance, placeholder):
-    	request = context['request']
+        request = context['request']
 
         form = self.create_form(instance, request)
     
-    	if request.method == "POST" and form.is_valid():
-			self.send(form, instance.site_email)
-			context.update( {
-				'contact': instance,
-			})
-    	else:
+        if request.method == "POST" and form.is_valid():
+            self.send(form, instance.site_email)
+            context.update( {
+                'contact': instance,
+            })
+        else:
             context.update({
                 'contact': instance,
                 'form': form,
@@ -78,10 +78,9 @@ class ContactPlugin(CMSPluginBase):
 
     def render_change_form(self, request, context, add=False, change=False, form_url='', obj=None):
         context.update({
-			'spam_protection_method': obj.spam_protection_method if obj else 0
+            'spam_protection_method': obj.spam_protection_method if obj else 0
         })
         
         return super(ContactPlugin, self).render_change_form(request, context, add, change, form_url, obj)
-    	
     
 plugin_pool.register_plugin(ContactPlugin)

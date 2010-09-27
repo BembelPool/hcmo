@@ -1,8 +1,17 @@
 {% load i18n %}
 
+<style type="text/css">
+#contactform { }
+#contactform label { display:block;  float:left; width: 140px;
+text-align:right; padding-right:10px;}
+
+</style>
+
 <div class="article">
+	
 {% if form %}
-	<form action='' method="POST">
+<h1>Kontakt</h1>
+	<form id="contactform" action='' method="POST">
         <p {% if form.email.errors %}class="error"{% endif %}>
 			<label>{{ contact.email_label }}</label>
 				{{ form.email }}
@@ -30,6 +39,8 @@
 				{% endfor %}
 			{% endif %}
 		</p>
+		
+		
 		{% if form.recaptcha_challenge_field %}
 			<p {% if form.recaptcha_response_fiel.errors %}class="error"{% endif %}>
 				{{ form.recaptcha_challenge_field }}
@@ -64,14 +75,18 @@
 			</p>
 		{% endif %}
 		
+		{% comment %}
 		{% if form.accept_terms %}
 			{{ form.accept_terms }}
 		{% endif %}
+		{% endcomment %}
+		
 		<p>
 			<button>{{ contact.submit }}</button>
 		</p>
 		
 		{% csrf_token %}
+		
 	</form>
 
 {% else %}
