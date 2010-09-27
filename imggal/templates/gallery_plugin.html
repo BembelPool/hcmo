@@ -11,6 +11,7 @@ jQuery(document).ready(function() {
     
     $('.more-galleries-list li').click(function() {
 	   var galid = $(this).attr('galid');
+
 	   var galtitle = $(this).attr('galtitle');
 	   $('#gallery-container').load('/imggal/get_images_for/' + galid + '/', function() {
 			$('#gallery-title').html(galtitle);

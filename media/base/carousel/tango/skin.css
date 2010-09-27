@@ -29,8 +29,8 @@
  */
 .jcarousel-skin-tango .jcarousel-next-horizontal {
     position: absolute;
-    top: 43px;
-    right: 0px;
+    top: 37px;
+    right: 5px;
     width: 32px;
     height: 32px;
     cursor: pointer;
@@ -56,11 +56,12 @@
 .jcarousel-skin-tango .jcarousel-next-disabled-horizontal:active {
     cursor: default;
     background-position: -96px 0;
+    opacity:0;
 }
 
 .jcarousel-skin-tango .jcarousel-prev-horizontal {
     position: absolute;
-    top: 43px;
+    top: 37px;
     left: 5px;
     width: 32px;
     height: 32px;
@@ -87,4 +88,5 @@
 .jcarousel-skin-tango .jcarousel-prev-disabled-horizontal:active {
     cursor: default;
     background-position: -96px 0;
+    opacity:0;
 }

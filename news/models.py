@@ -18,7 +18,7 @@ class Entry(models.Model):
     posted = models.DateField("Datum")
     image = models.ImageField("Bild", upload_to="news_images/")
     
-    teaser = models.TextField("Teaser")
+    teaser = models.TextField("Teaser", blank=True)
     message = models.TextField("Nachricht")
     
     def __unicode__(self):

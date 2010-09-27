@@ -20,6 +20,7 @@
 		{% block javascript %}{% endblock javascript %}
 	</head>
 	<body>
+        
         <div id="wrapper">
             <div id="container">
                 <div id="head">
@@ -28,7 +29,7 @@
                     </div>
                     <div id="head-navigation" class="left">
                         <ul id="menu">
-                        {% show_menu 1 100 0 100 "cms/navigation.html" %}
+                        {% show_menu_below_id "root" 0 100 0 100 "cms/navigation.html" %}
                         </ul>
                     </div>
                     <div class="clear"></div>

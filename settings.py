@@ -145,7 +145,7 @@ CMS_TEMPLATES = (
     ('cms/pages/default.html', 'Default'),
     ('cms/pages/home.html', 'Home'),
     ('cms/pages/showroom.html', 'Showroom'),
-    ('cms/default.html', 'Default'),
+    ('cms/pages/impressum.html', 'Impressum'),
 )
 
 CMS_MODERATOR = False

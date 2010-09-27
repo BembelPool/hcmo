@@ -1,6 +1,14 @@
 {% load cms_tags menu_tags %}
+
 {% for child in children %}
-    <li{% if child.selected or child.ancestor %} class="selected"{% endif %}>
+    
+    
+    
+    <li {% if child.selected or child.ancestor %} class="selected"{% endif %}
+        {% if current_page.reverse_id == 'root' %}
+            {% if child.url == '/home/'  %} class="selected"{% endif %}
+        {% endif %}
+        >
         <a href="{{ child.get_absolute_url }}">{{ child.get_menu_title }}</a>
     </li>
 {% endfor %}
