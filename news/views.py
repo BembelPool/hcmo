@@ -28,4 +28,4 @@ def details(request, slug):
     latest_entries = Entry.objects.all()[:5]
     print latest_entries
     return render_to_response("details.html", { 'details_entry': details_entry,
-                                'latest ': latest_entries }, RequestContext(request))
+                                'latest': latest_entries }, RequestContext(request))
